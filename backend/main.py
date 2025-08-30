@@ -19,7 +19,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model_size = "large-v3"  #"large-v3"
+model_size = "large-v3-turbo"  #"large-v3"
 model = WhisperModel(model_size, device="cuda" if torch.cuda.is_available() else "cpu", compute_type="float16")
 
 @app.post("/transcribe/")
